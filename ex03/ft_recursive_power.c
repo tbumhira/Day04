@@ -1,20 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_recursive_factorial.c                           :+:      :+:    :+:   */
+/*   ft_recursive_power.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tbumhira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/06/25 14:29:14 by tbumhira          #+#    #+#             */
-/*   Updated: 2020/06/25 14:32:26 by tbumhira         ###   ########.fr       */
+/*   Created: 2020/06/25 14:35:39 by tbumhira          #+#    #+#             */
+/*   Updated: 2020/06/25 14:36:27 by tbumhira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <unistd.h>
+#include <stdio.h>
+#include <unistd.h>
+#include <stdio.h>
+#include <unistd.h>
+#include <stdio.h>
 
-int		ft_recursive_factorial(int nb)
+int		ft_recursive_power(int nb, int power)
 {
-	if (nb >= 1)
-		return (nb * ft_recursive_factorial(nb - 1));
-	if (nb == 0)
+	if (!nb || power < 0)
+		return (0);
+	if (!power)
 		return (1);
-	return (0);
+	return (nb * ft_recursive_power(nb, power - 1));
 }
